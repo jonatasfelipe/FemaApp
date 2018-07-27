@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+
+
+    <ScrollView
+        android:id="@+id/backgroundmenualuno"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:ignore="ScrollViewSize">
+
+            <ImageButton
+                android:id="@+id/btnnota1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/notas"
+                android:text="NOTAS E FALTAS"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewnotas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnnota1"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:text="Notas e Faltas"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/btnhorarios1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignTop="@+id/btnmonografia1"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/horarios"
+                android:text="Horário das Aulas"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewhorarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnhorarios1"
+                android:layout_centerHorizontal="true"
+                android:text="@string/hor_rios" />
+
+            <ImageButton
+                android:id="@+id/btninformacao1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignLeft="@+id/btnnota1"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/btnhorarios1"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/informacao"
+                android:text="INFORMAÇÕES PESSOAIS"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewinformacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnnota1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:text="@string/suas_informa_es" />
+
+            <ImageButton
+                android:id="@+id/btnmonografia1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textViewboletos"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/monografia"
+                android:text="MONOGRAFIA"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewmonografia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/btnmonografia1"
+                android:layout_below="@+id/btnmonografia1"
+                android:text="@string/monografia"
+                android:layout_alignLeft="@+id/btnmonografia1" />
+
+            <ImageButton
+                android:id="@+id/btnboletos1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/boletos"
+                android:text="BOLETOS"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewboletos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/btnnota1"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:text="@string/boletos" />
+
+            <ImageButton
+                android:id="@+id/btncontratos1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_below="@+id/textViewdp1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/contratos"
+                android:text="CONTRATOS"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewcontratos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/btncontratos1"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="15dp"
+                android:text="@string/contratos"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="15dp" />
+
+            <ImageButton
+                android:id="@+id/btnDependencia1"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_below="@+id/textViewnotas"
+                android:layout_marginLeft="5dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:src="@drawable/dp"
+                android:text="DISCIPLINAS DEPENDÊNCIA"
+                tools:ignore="ContentDescription,HardcodedText,RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/textViewdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textViewcontratos"
+                android:layout_alignStart="@+id/textViewcontratos"
+                android:layout_below="@+id/btnDependencia1"
+                android:text="disciplinas"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textViewdp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/textViewnotas"
+                android:layout_below="@+id/textViewdp"
+                android:text="Dependência"
+                tools:ignore="HardcodedText"
+                android:layout_alignRight="@+id/textViewnotas" />
+
+            <Button
+                android:id="@+id/buttonlogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/textViewcontratos"
+                android:layout_centerHorizontal="true"
+                android:onClick="buttonlogout"
+                android:text="@string/logout" />
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

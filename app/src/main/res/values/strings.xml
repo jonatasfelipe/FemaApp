@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FemaApp</string>
+    <string name="notas_e_faltas">Notas e Faltas</string>
+    <string name="suas_informa_es">Suas Informações</string>
+    <string name="boletos">Boletos</string>
+    <string name="dp">DP</string>
+    <string name="hor_rios">Horários</string>
+    <string name="monografia">Monografia</string>
+    <string name="contratos">Contratos</string>
+    <string name="digitar_notas">Digitar Notas</string>
+
+    <string name="login_preference">fema.edu.br.femaapp_login_preference</string>
+    <string name="login_status_preference">fema.edu.br.femaapp_login_status_preference</string>
+    <string name="editTextraaluno" />
+    <string name="editTextsenhaaluno" />
+    <string name="logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
