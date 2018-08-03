@@ -21,7 +21,15 @@
         </activity>
         <activity android:name=".TelaMenualuno" />
         <activity android:name=".TelaLoginProfessor" />
-        <activity android:name=".TelaMenuprofessor"></activity>
+        <activity android:name=".TelaLoginAluno" />
+        <activity android:name=".TelaMenuprofessor" />
+        <activity android:name=".TelaNotaseFaltas" />
+        <activity android:name=".TelaInformacaoAluno" />
+        <activity android:name=".TelaBoletos" />
+        <activity android:name=".TelaDependencia" />
+        <activity android:name=".TelaHorarios" />
+        <activity android:name=".TelaMonografia" />
+        <activity android:name=".TelaContratos"></activity>
     </application>
 
 </manifest>
