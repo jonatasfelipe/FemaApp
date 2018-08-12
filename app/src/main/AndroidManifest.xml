@@ -29,7 +29,8 @@
         <activity android:name=".TelaDependencia" />
         <activity android:name=".TelaHorarios" />
         <activity android:name=".TelaMonografia" />
-        <activity android:name=".TelaContratos"></activity>
+        <activity android:name=".TelaContratos" />
+        <activity android:name=".TelaLancaNotas"></activity>
     </application>
 
 </manifest>
