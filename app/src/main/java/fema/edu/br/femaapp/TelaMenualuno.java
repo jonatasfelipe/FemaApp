@@ -83,9 +83,5 @@ public class TelaMenualuno extends AppCompatActivity {
         });
 
     }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
-    }
+
 }

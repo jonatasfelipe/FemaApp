@@ -19,6 +19,7 @@ public class TelaLoginAluno extends AppCompatActivity {
 
     String url = "";
     String parametros = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +31,18 @@ public class TelaLoginAluno extends AppCompatActivity {
 
         buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 ConnectivityManager connMgr = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-                if (networkInfo != null && networkInfo.isConnected()){
+                if (networkInfo != null && networkInfo.isConnected()) {
 
                     String ra = editTextraaluno.getText().toString();
                     String senha = editTextsenhaaluno.getText().toString();
 
-                    if(ra.isEmpty() || senha.isEmpty()) {
+                    if (ra.isEmpty() || senha.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Nenhuma campo pode estar vazio", Toast.LENGTH_SHORT).show();
                     } else {
                         //url = "http://10.0.119.17/femaapp/logar.php";
@@ -52,7 +53,7 @@ public class TelaLoginAluno extends AppCompatActivity {
                         new SolicitaDados().execute(url);
                     }
 
-                }else {
+                } else {
                     Toast.makeText(getApplicationContext(), "Nenhuma conexão foi detectada", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -60,7 +61,7 @@ public class TelaLoginAluno extends AppCompatActivity {
 
     }
 
-    private class SolicitaDados extends AsyncTask<String, Void, String>{
+    private class SolicitaDados extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
 
@@ -70,7 +71,7 @@ public class TelaLoginAluno extends AppCompatActivity {
         @Override
         protected void onPostExecute(String resultado) {
 
-            if(resultado.contains("login_ok")){
+            if (resultado.contains("login_ok")) {
                 Intent abreMenu = new Intent(TelaLoginAluno.this, TelaMenualuno.class);
                 startActivity(abreMenu);
             } else {
@@ -79,7 +80,6 @@ public class TelaLoginAluno extends AppCompatActivity {
 
         }
     }
-
     @Override
     protected void onPause() {
         super.onPause();

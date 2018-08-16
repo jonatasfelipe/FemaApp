@@ -79,7 +79,6 @@ public class TelaLoginProfessor extends AppCompatActivity {
 
         }
     }
-
     @Override
     protected void onPause() {
         super.onPause();
