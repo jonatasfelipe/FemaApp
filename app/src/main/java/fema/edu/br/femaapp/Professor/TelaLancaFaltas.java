@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import fema.edu.br.femaapp.R;
 
-public class TelaLancaNotas extends AppCompatActivity {
+public class TelaLancaFaltas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aluno_lista);
+        setContentView(R.layout.activity_tela_lanca_faltas);
     }
 }
