@@ -1,10 +1,14 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Geral;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+
+import fema.edu.br.femaapp.R;
+import fema.edu.br.femaapp.Aluno.TelaLoginAluno;
+import fema.edu.br.femaapp.Professor.TelaLoginProfessor;
 
 import static fema.edu.br.femaapp.R.layout.activity_tela_inicial;
 

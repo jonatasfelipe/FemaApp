@@ -1,4 +1,4 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Geral;
 
 import java.io.IOException;
 

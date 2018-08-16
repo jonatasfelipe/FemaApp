@@ -1,4 +1,4 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Aluno;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import fema.edu.br.femaapp.R;
 
 public class TelaMenualuno extends AppCompatActivity {
 

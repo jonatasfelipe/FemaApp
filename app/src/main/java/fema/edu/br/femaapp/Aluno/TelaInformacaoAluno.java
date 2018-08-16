@@ -1,13 +1,15 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Aluno;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TelaLancaNotas extends AppCompatActivity {
+import fema.edu.br.femaapp.R;
+
+public class TelaInformacaoAluno extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_lanca_notas);
+        setContentView(R.layout.activity_tela_informacao_aluno);
     }
 }

@@ -14,25 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".TelaInicial">
+        <activity android:name=".Geral.TelaInicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TelaMenualuno" />
-        <activity android:name=".TelaLoginProfessor" />
-        <activity android:name=".TelaLoginAluno" />
-        <activity android:name=".TelaMenuprofessor" />
-        <activity android:name=".TelaNotaseFaltas" />
-        <activity android:name=".TelaInformacaoAluno" />
-        <activity android:name=".TelaBoletos" />
-        <activity android:name=".TelaDependencia" />
-        <activity android:name=".TelaHorarios" />
-        <activity android:name=".TelaMonografia" />
-        <activity android:name=".TelaContratos" />
-        <activity android:name=".TelaLancaNotas" />
+        <activity android:name=".Aluno.TelaMenualuno" />
+        <activity android:name=".Professor.TelaLoginProfessor" />
+        <activity android:name=".Aluno.TelaLoginAluno" />
+        <activity android:name=".Professor.TelaMenuprofessor" />
+        <activity android:name=".Aluno.TelaNotaseFaltas" />
+        <activity android:name=".Aluno.TelaInformacaoAluno" />
+        <activity android:name=".Aluno.TelaBoletos" />
+        <activity android:name=".Aluno.TelaDependencia" />
+        <activity android:name=".Aluno.TelaHorarios" />
+        <activity android:name=".Aluno.TelaMonografia" />
+        <activity android:name=".Aluno.TelaContratos" />
+        <activity android:name=".Professor.TelaLancaNotas" />
     </application>
 
 </manifest>

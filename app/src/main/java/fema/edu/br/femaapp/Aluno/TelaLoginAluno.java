@@ -1,4 +1,4 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Aluno;
 
         import android.content.Context;
         import android.content.Intent;
@@ -12,7 +12,11 @@ package fema.edu.br.femaapp;
         import android.widget.EditText;
         import android.widget.Toast;
 
-public class TelaLoginAluno extends AppCompatActivity {
+        import fema.edu.br.femaapp.Geral.Conexao;
+        import fema.edu.br.femaapp.R;
+
+public class
+TelaLoginAluno extends AppCompatActivity {
 
     EditText editTextraaluno, editTextsenhaaluno;
     Button buttonlogin;

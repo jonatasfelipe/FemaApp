@@ -1,4 +1,4 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Professor;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import fema.edu.br.femaapp.Geral.Conexao;
+import fema.edu.br.femaapp.R;
 
 public class TelaLoginProfessor extends AppCompatActivity {
 

@@ -1,13 +1,15 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Professor;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class TelaMenuprofessor extends AppCompatActivity {
+import fema.edu.br.femaapp.R;
+
+public class TelaLancaNotas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_menu_professor);
+        setContentView(R.layout.activity_tela_lanca_notas);
     }
 }
