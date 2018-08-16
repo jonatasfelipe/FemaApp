@@ -14,8 +14,8 @@ package fema.edu.br.femaapp;
 
 public class TelaLoginAluno extends AppCompatActivity {
 
-    EditText editRa1, editSenha1;
-    Button btnLogar;
+    EditText editTextraaluno, editTextsenhaaluno;
+    Button buttonlogin;
 
     String url = "";
     String parametros = "";
@@ -24,11 +24,11 @@ public class TelaLoginAluno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login_aluno);
 
-        editRa1 = findViewById(R.id.editTextraaluno);
-        editSenha1 = findViewById(R.id.editTextsenhaaluno);
-        btnLogar = findViewById(R.id.buttonlogin);
+        editTextraaluno = findViewById(R.id.editTextraaluno);
+        editTextsenhaaluno = findViewById(R.id.editTextsenhaaluno);
+        buttonlogin = findViewById(R.id.buttonlogin);
 
-        btnLogar.setOnClickListener(new View.OnClickListener() {
+        buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
 
@@ -38,8 +38,8 @@ public class TelaLoginAluno extends AppCompatActivity {
 
                 if (networkInfo != null && networkInfo.isConnected()){
 
-                    String ra = editRa1.getText().toString();
-                    String senha = editSenha1.getText().toString();
+                    String ra = editTextraaluno.getText().toString();
+                    String senha = editTextsenhaaluno.getText().toString();
 
                     if(ra.isEmpty() || senha.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Nenhuma campo pode estar vazio", Toast.LENGTH_SHORT).show();

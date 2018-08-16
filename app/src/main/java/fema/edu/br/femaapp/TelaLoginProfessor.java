@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class TelaLoginProfessor extends AppCompatActivity {
 
-    EditText editRa2, editSenha2;
-    Button btnLogar2;
+    EditText editTextraprofessor, editTextsenhaprofessor;
+    Button buttonloginprofessor;
 
     String url = "";
     String parametros = "";
@@ -24,11 +24,11 @@ public class TelaLoginProfessor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_login_professor);
 
-        editRa2 = findViewById(R.id.editTextraprofessor);
-        editSenha2 = findViewById(R.id.editTextsenhaprofessor);
-        btnLogar2 = findViewById(R.id.buttonloginprofessor);
+        editTextraprofessor = findViewById(R.id.editTextraprofessor);
+        editTextsenhaprofessor = findViewById(R.id.editTextsenhaprofessor);
+        buttonloginprofessor = findViewById(R.id.buttonloginprofessor);
 
-        btnLogar2.setOnClickListener(new View.OnClickListener() {
+        buttonloginprofessor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
 
@@ -38,8 +38,8 @@ public class TelaLoginProfessor extends AppCompatActivity {
 
                 if (networkInfo != null && networkInfo.isConnected()){
 
-                    String ra = editRa2.getText().toString();
-                    String senha = editSenha2.getText().toString();
+                    String ra = editTextraprofessor.getText().toString();
+                    String senha = editTextsenhaprofessor.getText().toString();
 
                     if(ra.isEmpty() || senha.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Nenhuma campo pode estar vazio", Toast.LENGTH_SHORT).show();
