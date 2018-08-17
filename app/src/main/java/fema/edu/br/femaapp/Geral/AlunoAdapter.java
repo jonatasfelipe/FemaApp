@@ -14,7 +14,7 @@ import java.util.List;
 
 import fema.edu.br.femaapp.R;
 
-public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ProductViewHolder>{
+public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHolder>{
 
     private Context mCtx;
     private List<Aluno> alunoList;
@@ -25,36 +25,37 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ProductViewH
     }
 
     @Override
-    public ProductViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AlunoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.activity_aluno_lista, null);
-        return new ProductViewHolder(view);
+        View view = inflater.inflate(R.layout.activity_aluno_lista,null);
+        return new AlunoViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ProductViewHolder holder, int position) {
-        Aluno product = alunoList.get(position);
+    public void onBindViewHolder(AlunoViewHolder holder, int position) {
+        Aluno aluno = alunoList.get(position);
 
         //loading the image
         Glide.with(mCtx)
-                .load(product.getImagem())
+                .load(aluno.getImagem())
                 .into(holder.imageView);
 
-        holder.textViewTitle.setText(product.getRa_aluno());
-        holder.textViewShortDesc.setText(product.getNome());
+        holder.textViewTitle.setText(aluno.getRa_aluno());
+        holder.textViewShortDesc.setText(aluno.getNome());
     }
 
     @Override
     public int getItemCount() {
+
         return alunoList.size();
     }
 
-    class ProductViewHolder extends RecyclerView.ViewHolder {
+    class AlunoViewHolder extends RecyclerView.ViewHolder {
 
         TextView textViewTitle, textViewShortDesc;
         ImageView imageView;
 
-        public ProductViewHolder(View itemView) {
+        public AlunoViewHolder(View itemView) {
             super(itemView);
 
             textViewTitle = itemView.findViewById(R.id.textViewTitle);

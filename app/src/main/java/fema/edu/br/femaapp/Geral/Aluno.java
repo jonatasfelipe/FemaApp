@@ -1,6 +1,9 @@
 package fema.edu.br.femaapp.Geral;
 
-public class Aluno {
+
+import android.support.v7.app.AppCompatActivity;
+
+public class Aluno extends AppCompatActivity{
 
     private int ra_aluno;
     private String nome;
@@ -13,14 +16,17 @@ public class Aluno {
     }
 
     public int getRa_aluno() {
+
         return ra_aluno;
     }
 
     public String getNome() {
+
         return nome;
     }
 
     public String getImagem() {
+
         return imagem;
     }
 }
