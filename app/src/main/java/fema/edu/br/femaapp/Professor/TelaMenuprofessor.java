@@ -1,11 +1,13 @@
 package fema.edu.br.femaapp.Professor;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import fema.edu.br.femaapp.FazerChamada;
+import fema.edu.br.femaapp.LancarNotas;
 import fema.edu.br.femaapp.R;
 
 public class TelaMenuprofessor extends AppCompatActivity {
@@ -23,7 +25,7 @@ public class TelaMenuprofessor extends AppCompatActivity {
         btnpresenca.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent abreLancaFaltas = new Intent(TelaMenuprofessor.this, TelaLancaFaltas.class);
+                Intent abreLancaFaltas = new Intent(TelaMenuprofessor.this, FazerChamada.class);
                 startActivity(abreLancaFaltas);
             }
         });
@@ -31,7 +33,7 @@ public class TelaMenuprofessor extends AppCompatActivity {
         btnnotas.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent abreLancaNotas = new Intent(TelaMenuprofessor.this, TelaLancaNotas.class);
+                Intent abreLancaNotas = new Intent(TelaMenuprofessor.this, LancarNotas.class);
                 startActivity(abreLancaNotas);
             }
 

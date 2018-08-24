@@ -211,8 +211,6 @@
                 android:text="logout"
                 tools:ignore="HardcodedText" />
 
-
-
         </RelativeLayout>
     </ScrollView>
 

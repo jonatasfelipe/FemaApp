@@ -7,7 +7,7 @@
     android:paddingRight="5dp"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
-    tools:context=".TelaLoginaluno"
+    tools:context=".Aluno.TelaLoginAluno"
     android:orientation="vertical">
 
     <ImageView
@@ -61,7 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:onClick="loginAluno"
         android:text="Login"
         tools:ignore="HardcodedText" />
 

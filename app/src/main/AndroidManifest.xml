@@ -26,15 +26,14 @@
         <activity android:name=".Aluno.TelaLoginAluno" />
         <activity android:name=".Professor.TelaMenuprofessor" />
         <activity android:name=".Aluno.TelaNotaseFaltas" />
-        <activity android:name=".Aluno.TelaInformacaoAluno" />
         <activity android:name=".Aluno.TelaBoletos" />
         <activity android:name=".Aluno.TelaDependencia" />
         <activity android:name=".Aluno.TelaHorarios" />
         <activity android:name=".Aluno.TelaMonografia" />
         <activity android:name=".Aluno.TelaContratos" />
-        <activity android:name=".Professor.TelaLancaNotas" />
-        <activity android:name=".Professor.TelaLancaFaltas" />
-        <activity android:name=".Geral.Aluno" />
+        <activity android:name=".FazerChamada" />
+        <activity android:name=".LancarNotas" />
+        <activity android:name=".TelaInformacoesAluno"></activity>
     </application>
 
 </manifest>

@@ -5,13 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import fema.edu.br.femaapp.R;
+import fema.edu.br.femaapp.TelaInformacoesAluno;
 
 public class TelaMenualuno extends AppCompatActivity {
 
     ImageButton btnnota1, btninformacao1, btnboletos1, btnDependencia1,btnhorarios1,btnmonografia1,btncontratos1;
+    EditText txtResultado;
     Button buttonlogout;
 
     @Override
@@ -39,7 +42,7 @@ public class TelaMenualuno extends AppCompatActivity {
         btninformacao1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent abreInformacao = new Intent(TelaMenualuno.this, TelaInformacaoAluno.class);
+                Intent abreInformacao = new Intent(TelaMenualuno.this, TelaInformacoesAluno.class);
                 startActivity(abreInformacao);
             }
         });
@@ -83,6 +86,7 @@ public class TelaMenualuno extends AppCompatActivity {
                 startActivity(abreContratos);
             }
         });
+
 
     }
 
