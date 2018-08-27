@@ -10,6 +10,7 @@ package fema.edu.br.femaapp.Aluno;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+        import android.widget.TextView;
         import android.widget.Toast;
 
         import fema.edu.br.femaapp.Geral.Conexao;
@@ -77,7 +78,15 @@ TelaLoginAluno extends AppCompatActivity {
 
             if (resultado.contains("login_ok")) {
                 Intent abreMenu = new Intent(TelaLoginAluno.this, TelaMenualuno.class);
+                editTextraaluno = findViewById(R.id.editTextraaluno);
+
+                String ra = "";
+                ra = editTextraaluno.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("ra", ra);
+                abreMenu.putExtras(bundle);
                 startActivity(abreMenu);
+
             } else {
                 Toast.makeText(getApplicationContext(), "Usuário ou senha estão incorretos", Toast.LENGTH_SHORT).show();
             }

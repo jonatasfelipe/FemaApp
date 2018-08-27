@@ -211,6 +211,17 @@
                 android:text="logout"
                 tools:ignore="HardcodedText" />
 
+            <EditText
+                android:id="@+id/EditTextRaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="TextView"
+                android:visibility="invisible"
+                tools:ignore="HardcodedText" />
+
         </RelativeLayout>
     </ScrollView>
 

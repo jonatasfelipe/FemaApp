@@ -1,88 +1,95 @@
 package fema.edu.br.femaapp;
 
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import fema.edu.br.femaapp.Geral.AlunoAdapter;
+import fema.edu.br.femaapp.Geral.ListAluno;
 
 public class FazerChamada extends AppCompatActivity {
 
-    ListView listView;
+
+    private static final String URL_DATA = "http://192.168.1.80/femaapp/consultaalunos.php";
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+
+    private List<ListAluno> listAlunos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fazer_chamada);
 
-        listView = findViewById(R.id.listView);
-        getJSON("http://192.168.1.80/femaapp/consultaalunos.php");
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        listAlunos = new ArrayList<>();
+
+        loadRecyclerViewData();
+
     }
+    private void loadRecyclerViewData(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Carregando");
+        progressDialog.show();
 
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                URL_DATA,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+                        progressDialog.dismiss();
+                        try {
+                            JSONObject jsonObject = new JSONObject(s);
+                            JSONArray array = jsonObject.getJSONArray("usuario");
 
-    private void getJSON(final String urlWebService) {
+                            for (int i = 0; i<array.length(); i++){
+                                JSONObject o = array.getJSONObject(i);
+                                ListAluno aluno = new ListAluno(
+                                        o.getString("nome"),
+                                        o.getString("ra_aluno"),
+                                        o.getString("imagem")
+                                );
+                                listAlunos.add(aluno);
+                            }
 
-        class GetJSON extends AsyncTask<Void, Void, String> {
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-            }
-
-
-            @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                try {
-                    loadIntoListView(s);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            protected String doInBackground(Void... voids) {
-                try {
-                    URL url = new URL(urlWebService);
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    StringBuilder sb = new StringBuilder();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                    String json;
-                    while ((json = bufferedReader.readLine()) != null) {
-                        sb.append(json + "\n");
+                            adapter = new AlunoAdapter(listAlunos, getApplicationContext());
+                            recyclerView.setAdapter(adapter);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
-                    return sb.toString().trim();
-                } catch (Exception e) {
-                    return null;
-                }
-            }
-        }
-        GetJSON getJSON = new GetJSON();
-        getJSON.execute();
-    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        progressDialog.dismiss();
+                        Toast.makeText(getApplicationContext(), volleyError.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
 
-    private void loadIntoListView(String json) throws JSONException {
-        //criando o array json a partir do json string
-        JSONArray jsonArray = new JSONArray(json);
-        //criando uma matriz de string para o listview
-        String[] alunos = new String[jsonArray.length()];
-        //loop atraves de todos os elemntos do array json
-        for (int i = 0; i < jsonArray.length(); i++) {
-
-            JSONObject aluno = jsonArray.getJSONObject(i);
-            alunos[i] = aluno.getString("nome");
-        }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alunos);
-        listView.setAdapter(arrayAdapter);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }
+

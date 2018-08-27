@@ -33,7 +33,7 @@
         <activity android:name=".Aluno.TelaContratos" />
         <activity android:name=".FazerChamada" />
         <activity android:name=".LancarNotas" />
-        <activity android:name=".TelaInformacoesAluno"></activity>
+        <activity android:name=".Aluno.TelaInformacaoAluno"></activity>
     </application>
 
 </manifest>

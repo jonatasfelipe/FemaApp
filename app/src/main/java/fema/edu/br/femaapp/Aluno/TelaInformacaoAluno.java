@@ -1,10 +1,12 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Aluno;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -23,13 +25,15 @@ import java.util.List;
 
 import fema.edu.br.femaapp.Geral.AlunoAdapter;
 import fema.edu.br.femaapp.Geral.ListAluno;
+import fema.edu.br.femaapp.R;
 
-public class LancarNotas extends AppCompatActivity {
+
+public class TelaInformacaoAluno extends AppCompatActivity {
 
 
     private static final String URL_DATA = "http://192.168.1.80/femaapp/consultaalunos.php";
 
-    private RecyclerView recyclerView1;
+    private RecyclerView recyclerView2;
     private RecyclerView.Adapter adapter;
 
     private List<ListAluno> listAlunos;
@@ -37,11 +41,17 @@ public class LancarNotas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lancar_notas);
+        setContentView(R.layout.activity_tela_informacoes_aluno);
 
-        recyclerView1 = findViewById(R.id.recyclerView1);
-        recyclerView1.setHasFixedSize(true);
-        recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+        Intent abreInformacao = getIntent();
+        Bundle bundle = abreInformacao.getExtras();
+        String ra = bundle.getString("ra");
+        final EditText[] Raresultado = {findViewById(R.id.Raresultado)};
+        Raresultado[0].setText(ra);
+
+        recyclerView2 = findViewById(R.id.recyclerView2);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
 
         listAlunos = new ArrayList<>();
 
@@ -74,7 +84,7 @@ public class LancarNotas extends AppCompatActivity {
                             }
 
                             adapter = new AlunoAdapter(listAlunos, getApplicationContext());
-                            recyclerView1.setAdapter(adapter);
+                            recyclerView2.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
