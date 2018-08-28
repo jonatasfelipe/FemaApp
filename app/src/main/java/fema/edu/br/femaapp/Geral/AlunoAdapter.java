@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -37,8 +36,12 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         final ListAluno listAluno = listAlunos.get(position);
 
-        holder.textViewHead.setText(listAluno.getHead());
-        holder.textViewDesc.setText(listAluno.getDesc());
+        holder.textViewHead.setText(listAluno.getNome());
+        holder.textViewDesc.setText(listAluno.getRa());
+        holder.texViewRg.setText(listAluno.getRg());
+        holder.textViewCpf.setText(listAluno.getCpf());
+        holder.textViewEmail.setText(listAluno.getEmail());
+
 
         Glide.with(context)
                 .load(listAluno.getImageUrl())
@@ -51,9 +54,12 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-            //aqui vai os itemns que estão na lista
+            //aqui vai os itens que estão na lista
         public TextView textViewHead;
         public TextView textViewDesc;
+        public TextView texViewRg;
+        public TextView textViewCpf;
+        public TextView textViewEmail;
         public ImageView imageView;
 
         public ViewHolder(View itemView) {
@@ -61,6 +67,9 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.ViewHolder>{
 
             textViewHead = itemView.findViewById(R.id.textViewHead);
             textViewDesc = itemView.findViewById(R.id.textViewDesc);
+            texViewRg = itemView.findViewById(R.id.textViewRg);
+            textViewCpf = itemView.findViewById(R.id.textViewCpf);
+            textViewEmail = itemView.findViewById(R.id.textViewEmail);
             imageView = itemView.findViewById(R.id.imageView);
         }
     }

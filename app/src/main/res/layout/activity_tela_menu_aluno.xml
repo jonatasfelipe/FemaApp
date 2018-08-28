@@ -212,15 +212,14 @@
                 tools:ignore="HardcodedText" />
 
             <EditText
-                android:id="@+id/EditTextRaa"
+                android:id="@+id/txtResultado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:text="TextView"
                 android:visibility="invisible"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText,LabelFor,TextFields" />
 
         </RelativeLayout>
     </ScrollView>

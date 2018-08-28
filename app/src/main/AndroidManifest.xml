@@ -31,8 +31,8 @@
         <activity android:name=".Aluno.TelaHorarios" />
         <activity android:name=".Aluno.TelaMonografia" />
         <activity android:name=".Aluno.TelaContratos" />
-        <activity android:name=".FazerChamada" />
-        <activity android:name=".LancarNotas" />
+        <activity android:name=".Professor.FazerChamada" />
+        <activity android:name=".Professor.LancarNotas" />
         <activity android:name=".Aluno.TelaInformacaoAluno"></activity>
     </application>
 

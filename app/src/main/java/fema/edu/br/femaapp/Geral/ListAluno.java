@@ -2,22 +2,40 @@ package fema.edu.br.femaapp.Geral;
 
 public class ListAluno {
 
-    private String head;
-    private String desc;
+    private String nome;
+    private String ra;
+    private String rg;
+    private String cpf;
+    private String email;
     private String imageUrl;
 
-    public ListAluno(String head, String desc, String imageUrl) {
-        this.head = head;
-        this.desc = desc;
+    public ListAluno(String nome, String ra, String rg, String cpf, String email, String imageUrl) {
+        this.nome = nome;
+        this.ra = ra;
+        this.rg = rg;
+        this.cpf = cpf;
+        this.email = email;
         this.imageUrl = imageUrl;
     }
 
-    public String getHead() {
-        return head;
+    public String getNome() {
+        return nome;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getRa() {
+        return ra;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public String getImageUrl() {

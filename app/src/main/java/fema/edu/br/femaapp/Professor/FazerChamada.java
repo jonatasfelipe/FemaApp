@@ -1,4 +1,4 @@
-package fema.edu.br.femaapp;
+package fema.edu.br.femaapp.Professor;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -23,13 +23,14 @@ import java.util.List;
 
 import fema.edu.br.femaapp.Geral.AlunoAdapter;
 import fema.edu.br.femaapp.Geral.ListAluno;
+import fema.edu.br.femaapp.R;
 
-public class LancarNotas extends AppCompatActivity {
+public class FazerChamada extends AppCompatActivity {
 
 
     private static final String URL_DATA = "http://192.168.1.80/femaapp/consultaalunos.php";
 
-    private RecyclerView recyclerView1;
+    private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
     private List<ListAluno> listAlunos;
@@ -37,11 +38,11 @@ public class LancarNotas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lancar_notas);
+        setContentView(R.layout.activity_fazer_chamada);
 
-        recyclerView1 = findViewById(R.id.recyclerView1);
-        recyclerView1.setHasFixedSize(true);
-        recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listAlunos = new ArrayList<>();
 
@@ -68,13 +69,16 @@ public class LancarNotas extends AppCompatActivity {
                                 ListAluno aluno = new ListAluno(
                                         o.getString("nome"),
                                         o.getString("ra_aluno"),
+                                        o.getString("rg"),
+                                        o.getString("cpf"),
+                                        o.getString("email"),
                                         o.getString("imagem")
                                 );
                                 listAlunos.add(aluno);
                             }
 
                             adapter = new AlunoAdapter(listAlunos, getApplicationContext());
-                            recyclerView1.setAdapter(adapter);
+                            recyclerView.setAdapter(adapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -92,3 +96,4 @@ public class LancarNotas extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 }
+

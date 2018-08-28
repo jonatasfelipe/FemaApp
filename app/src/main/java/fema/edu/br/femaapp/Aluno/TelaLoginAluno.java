@@ -1,23 +1,22 @@
 package fema.edu.br.femaapp.Aluno;
 
-        import android.content.Context;
-        import android.content.Intent;
-        import android.net.ConnectivityManager;
-        import android.net.NetworkInfo;
-        import android.os.AsyncTask;
-        import android.support.v7.app.AppCompatActivity;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.EditText;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import fema.edu.br.femaapp.Geral.Conexao;
-        import fema.edu.br.femaapp.R;
+import fema.edu.br.femaapp.Geral.Conexao;
+import fema.edu.br.femaapp.R;
 
-public class
-TelaLoginAluno extends AppCompatActivity {
+public class TelaLoginAluno extends AppCompatActivity {
 
     EditText editTextraaluno, editTextsenhaaluno;
     Button buttonlogin;
@@ -78,13 +77,16 @@ TelaLoginAluno extends AppCompatActivity {
 
             if (resultado.contains("login_ok")) {
                 Intent abreMenu = new Intent(TelaLoginAluno.this, TelaMenualuno.class);
-                editTextraaluno = findViewById(R.id.editTextraaluno);
 
-                String ra = "";
-                ra = editTextraaluno.getText().toString();
+                TextView edtTexto = findViewById(R.id.editTextraaluno);
+
+                String txt = "";
+                txt = edtTexto.getText().toString();
                 Bundle bundle = new Bundle();
-                bundle.putString("ra", ra);
+
+                bundle.putString("txt", txt);
                 abreMenu.putExtras(bundle);
+
                 startActivity(abreMenu);
 
             } else {
@@ -93,6 +95,7 @@ TelaLoginAluno extends AppCompatActivity {
 
         }
     }
+
     @Override
     protected void onPause() {
         super.onPause();

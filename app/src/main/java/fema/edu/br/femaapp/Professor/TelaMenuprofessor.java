@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-import fema.edu.br.femaapp.FazerChamada;
-import fema.edu.br.femaapp.LancarNotas;
 import fema.edu.br.femaapp.R;
 
 public class TelaMenuprofessor extends AppCompatActivity {
